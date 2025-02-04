@@ -41,7 +41,9 @@ def generate_response(user_input: str):
     intent = get_best_intent(user_input)
     if intent is None:
         with open("./stock_quest.txt", "a", encoding="utf-8") as file:
+            print("ok1")
             file.write(user_input + "\n")
+            print("ok2")
         return "Je n’ai pas la réponse exacte à cette question, mais pas d’inquiétude ! Vous pouvez contacter le 01 62 45 01 05, et quelqu’un se fera un plaisir de vous aider. Si vous préférez être rappelé à un moment qui vous convient, n’hésitez pas à réserver un créneau sur le site : https://nostrumcare.fr/contact. Ils seront ravis de vous accompagner !"
     return random.choice(intent["responses"])
 
